@@ -1,0 +1,18 @@
+name: scp files
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload Files
+      uses: siva1024/scp-deployer@main
+      env:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        pub: ${{ secrets.PUB }}
+        source: "test/test.sh"
+        target: "~/"
+ 
