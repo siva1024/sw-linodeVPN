@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Upload Files
       uses: siva1024/scp-deployer@main
-      env:
+      with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
