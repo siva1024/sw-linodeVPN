@@ -6,13 +6,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2     
     - name: Upload Files
-      uses: siva1024/scp-deployer@main
+      uses: siva1024/scp-deployer@latest
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        pub: ${{ secrets.PUB }}
         source: "test/test.sh"
         target: "~/"
  
